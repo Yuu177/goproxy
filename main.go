@@ -12,13 +12,13 @@ import (
 func main() {
 	var addr = flag.String("addr", "127.0.0.1:8080", "The addr of the proxy.")
 	flag.Parse()
-	proxy := NewProxyHttpServer1()
+	proxy := NewProxyHttpServer()
 	log.Println("Starting proxy server on", *addr)
 	log.Fatal(http.ListenAndServe(*addr, proxy))
 }
 
 // NewProxyHttpServer creates and returns a proxy server
-func NewProxyHttpServer1() *ProxyHttpServer {
+func NewProxyHttpServer() *ProxyHttpServer {
 	proxy := ProxyHttpServer{}
 	return &proxy
 }
